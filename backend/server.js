@@ -2,17 +2,17 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import transactionRoutes from "../backend/routes/transactionRoutes.js";
+import transactionRoutes from "./routes/transactionRoutes.js";
 
 dotenv.config();
 
 const app = express();
 
-// ✅ CORS (Allow Vercel Frontend)
+// ✅ CORS
 app.use(
   cors({
-    origin: ["https://myincomeexp.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: ["https://myincomeexp.vercel.app", "http://localhost:5173"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   })
 );
@@ -36,5 +36,5 @@ app.get("/", (req, res) => {
 // Server Start
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API = "http://localhost:5000/api/transactions";
+const API = "https://myincomeexp-l1tb.vercel.app/api/transactions";
 
 export default function AddTransactionForm({ onAdded }) {
   const [type, setType] = useState("expense");

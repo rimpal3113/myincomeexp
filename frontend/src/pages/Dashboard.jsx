@@ -3,7 +3,7 @@ import AddTransactionForm from "../components/AddTransactionForm";
 import WeeklySummary from "../components/WeeklySummary";
 import CategorySummary from "../components/CategorySummary";
 
-const API = "http://localhost:5000/api/transactions";
+const API = "https://myincomeexp-l1tb.vercel.app/api/transactions";
 
 export default function Dashboard() {
   const [transactions, setTransactions] = useState([]);
